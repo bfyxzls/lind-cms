@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>CMS Boot | login</title>
+
+    <!-- Bootstrap -->
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <!-- NProgress -->
+    <link href="/webjars/nprogress/0.1.2/css/nprogress.css" rel="stylesheet"/>
+    <!-- Animate.css -->
+    <link href="/webjars/animate.css/3.5.2/animate.min.css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="admin/css/custom.min.css" rel="stylesheet"/>
+</head>
+
+<body class="login">
+<div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <form th:action="@{/login}" method="post">
+                    <h1>Login</h1>
+
+                    <div th:if="${param.error}">
+                        Invalid name or password.
+                    </div>
+                    <div th:if="${param.logout}">
+                        You have been logged out.
+                    </div>
+
+                    <div>
+                        <input name="username" type="text" class="form-control" placeholder="Username" required=""/>
+                    </div>
+                    <div>
+                        <input name="password" type="password" class="form-control" placeholder="Password" required=""/>
+                    </div>
+                    <div>
+                        <input class="btn btn-default submit center" type="submit" value="Login"/>
+                        <a class="reset_pass" href="#">Forgotten password?</a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+                        <p class="change_link">
+                            <a href="#signup" class="to_register"> Create new account </a>
+                        </p>
+
+                        <div class="clearfix"></div>
+                        <br/>
+
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+            <section class="login_content">
+                <form>
+                    <h1>Create new account</h1>
+                    <div>
+                        <input type="text" class="form-control" placeholder="Username" required=""/>
+                    </div>
+                    <div>
+                        <input type="email" class="form-control" placeholder="Email" required=""/>
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Password" required=""/>
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Password confirm" required=""/>
+                    </div>
+                    <div>
+                        <a class="btn btn-default submit" href="index.html">Create</a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+                        <p class="change_link">Already a member ?
+                            <a href="#signin" class="to_register"> Log in </a>
+                        </p>
+
+                        <div class="clearfix"></div>
+                        <br/>
+
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>

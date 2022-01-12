@@ -1,0 +1,25 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: 123456
+        url: jdbc:mysql://192.168.4.26:3306/cms-boot?useUnicode=yes&characterEncoding=UTF-8
+        username: root
+        initialization-mode: never
+    http:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+    jpa:
+        hibernate:
+            ddl-auto: update
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    queries:
+        roles-query: SELECT u.email, r.role from user u inner join user_roles ur on(u.id=ur.user_id) inner join role r on(ur.roles_id=r.id) where u.email=?;
+        users-query: SELECT email, password, active FROM user where email=?;
+    resources:
+        cache:
+          period: 0s
+
+upload:
+  work-dir: work #path to workdir

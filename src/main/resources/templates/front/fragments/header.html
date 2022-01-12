@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>CMS Boot</title>
+
+    <!-- Bootstrap -->
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div th:fragment="main-menu">
+    <h1>内部发布系统</h1>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/}">Homepage</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/about}">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/products}" href="#">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/contacts}">Contacts</a>
+        </li>
+    </ul>
+    <!-- jQuery -->
+    <script src="/webjars/jquery/1.11.3/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <script>
+        String.prototype.endWith = function (endStr) {
+            var d = this.length - endStr.length;
+            return (d >= 0 && this.lastIndexOf(endStr) == d)
+        }
+        $(function () {
+            //高亮导航
+            $(".nav").find("li").each(function (i, o) {
+                if ($(o).find("a").attr("href").endWith(window.location.pathname)) {
+                    $(o).addClass("active").siblings().removeClass("active");
+                }
+            });
+
+        });
+    </script>
+</div>
+</body>
+
+</html>
