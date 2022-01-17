@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="front/fragments/header :: head">
+</head>
+
+<body>
+
+
+<!-- Page Content -->
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div th:replace="front/fragments/header :: main-menu"></div>
+        </div>
+        <div class="panel-body">
+            <!-- /main menu -->
+            <div th:replace="front/fragments/detail :: detail-info"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

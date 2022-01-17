@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="detail-info">
+    <form class="form-horizontal">
+
+
+        <table class="table table-striped">
+            <tbody>
+            <tr th:each="item:${detail}">
+                <td style="font-weight: bold;" th:text="${item.description}"></td>
+                <td th:utext="${item.value}">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+</div>
+</html>

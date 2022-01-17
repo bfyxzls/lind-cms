@@ -2,6 +2,7 @@ package app.persistence.entity.eshop;
 
 import app.persistence.entity.cms.PageImage;
 import lombok.Data;
+import org.springframework.context.annotation.Description;
 
 import javax.persistence.*;
 import java.util.ArrayList;

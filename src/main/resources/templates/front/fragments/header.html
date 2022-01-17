@@ -8,33 +8,29 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>CMS Boot</title>
+    <title>项目管理</title>
 
     <!-- Bootstrap -->
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
 </head>
 
 <body>
 <div th:fragment="main-menu">
-    <h1>内部发布系统</h1>
+    <h1>项目管理平台</h1>
     <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/}">Homepage</a>
+
+        <li class="nav-item active">
+            <a class="nav-link" th:href="@{/products}" href="#">项目列表</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/about}">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/products}" href="#">Products</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/contacts}">Contacts</a>
-        </li>
+
     </ul>
     <!-- jQuery -->
     <script src="/webjars/jquery/1.11.3/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+
+    <script src="http://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script>
         String.prototype.endWith = function (endStr) {
             var d = this.length - endStr.length;
@@ -42,11 +38,11 @@
         }
         $(function () {
             //高亮导航
-            $(".nav").find("li").each(function (i, o) {
-                if ($(o).find("a").attr("href").endWith(window.location.pathname)) {
-                    $(o).addClass("active").siblings().removeClass("active");
-                }
-            });
+            // $(".nav").find("li").each(function (i, o) {
+            //     if ($(o).find("a").attr("href").endWith(window.location.pathname)) {
+            //         $(o).addClass("active").siblings().removeClass("active");
+            //     }
+            // });
 
         });
     </script>

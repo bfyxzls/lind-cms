@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomepageController extends FrontAbstractController {
 
 
-    @RequestMapping("/")
-    public String index(Model model) {
-        addPageData(model, "homepage");
+  @RequestMapping("/")
+  public String index(Model model) {
+    addPageData(model, "homepage");
 
-        return "front/index";
-    }
+    return redirect("/products");
+  }
 
 }

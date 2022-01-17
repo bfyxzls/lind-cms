@@ -53,11 +53,7 @@
                     <div class="menu_section">
                         <h3>Contant</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a th:href="@{/admin/dashboard}">Dashboard</a></li>
-                                </ul>
-                            </li>
+
                             <li><a><i class="fa fa-edit"></i> Sites content <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li th:each="page : ${pages}">
@@ -72,22 +68,11 @@
                     <div class="menu_section">
                         <h3>E-shop</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-cube"></i> Products <span
+                            <li><a><i class="fa fa-cube"></i> 项目管理 <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a th:href="@{/admin/product/all}">List</a></li>
-                                    <li><a th:href="@{/admin/product/addProduct}">Add product</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="menu_section">
-                        <h3>Other</h3>
-                        <ul class="nav side-menu">
-                            <li><a><i class="fa fa-desktop"></i> System <span
-                                    class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a th:href="@{/admin/notification}">Notifications</a></li>
+                                    <li><a th:href="@{/admin/product/all}">项目列表</a></li>
+                                    <li><a th:href="@{/admin/product/addProduct}">添加项目</a></li>
                                 </ul>
                             </li>
                         </ul>

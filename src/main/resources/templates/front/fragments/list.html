@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th th:each="subject:${fields}"><span th:text="${subject}"></span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${maps}">
+        <td th:each="val:${fields}"><span
+                th:text="${product.get(val)}"/>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</html>

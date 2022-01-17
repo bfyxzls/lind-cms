@@ -64,5 +64,6 @@ dependencies {
     compile 'org.webjars.bower:datejs:1.0.0-rc3'
     compile 'org.webjars.npm:github-com-manifestinteractive-jqvmap:1.5.1'
     compile 'org.webjars.bower:moment:2.18.1'
+    compile 'cn.hutool:hutool-all:5.5.7'
 
 }

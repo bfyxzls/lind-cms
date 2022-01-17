@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="form-info">
+    <form th:action="@{/admin/product/addProduct}" method="post"
+          data-parsley-validate="" class="form-horizontal form-label-left"
+          novalidate="">
+
+        <div class="form-group" th:each="item:${detail}">
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    <span th:text="${item.description}"></span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input th:name="${item.key}" th:value="${item.value}" type="text" required="required"
+                           class="form-control col-md-7 col-xs-12"/>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" th:value="${id}" name="productId"/>
+
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+</html>

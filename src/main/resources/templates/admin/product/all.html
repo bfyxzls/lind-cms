@@ -19,7 +19,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Products</h2>
+                            <h2>项目列表</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
@@ -35,14 +35,26 @@
                                 <table class="table table-striped jambo_table bulk_action">
                                     <thead>
                                     <tr class="headings">
-                                        <th class="column-title">Product title</th>
+                                        <th>项目名称</th>
+                                        <th>项目类型</th>
+                                        <th>业务线</th>
+                                        <th>业务模块</th>
+                                        <th></th>
                                     </tr>
                                     </thead>
 
                                     <tbody>
                                     <tr class="even pointer" th:each="product : ${products}">
                                         <td >
-                                            <a th:href="@{/admin/product/addProduct(productId=${product.id})}" th:text="${product.title}"></a>
+                                            <a th:href="@{/detail?id={id}(id=${product.id})}" th:text="${product.projectName}"></a>
+                                        </td>
+                                        <td th:text="${product.projectType}"></td>
+                                        <td th:text="${product.businessLine}"></td>
+                                        <td th:text="${product.businessModule}"></td>
+                                        <td>
+                                            <a th:href="@{/admin/product/addProduct?productId={productId}(productId=${product.id})}" th:text="编辑"></a>
+&nbsp;&nbsp;
+                                            <a th:href="@{/admin/product/delProduct?productId={productId}(productId=${product.id})}" th:text="删除"></a>
                                         </td>
                                     </tr>
                                     </tbody>
