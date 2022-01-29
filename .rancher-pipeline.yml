@@ -10,7 +10,6 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: cms
-      pushRemote: true
       registry: index.docker.io
 timeout: 60
 notification: {}
