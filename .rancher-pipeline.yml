@@ -1,0 +1,16 @@
+stages:
+- name: build
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: gradlew build
+- name: image
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: cms
+      pushRemote: true
+      registry: index.docker.io
+timeout: 60
+notification: {}
