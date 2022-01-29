@@ -1,6 +1,7 @@
 package app.common;
 
 import app.config.anotation.Description;
+import app.config.anotation.HtmlSelect;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
@@ -68,6 +69,16 @@ public class HTMLTemplateUtils {
       return field.isAnnotationPresent(Description.class)
           ? field.getAnnotation(Description.class).value()
           : field.getName();
+    }
+    return null;
+  }
+
+  public static String[] getFieldSelectByName(String fieldName, Class<?> type) {
+    Field field = Arrays.stream(type.getDeclaredFields()).filter(i -> i.getName().equals(fieldName)).findFirst().orElse(null);
+    if (field != null) {
+      return field.isAnnotationPresent(HtmlSelect.class)
+          ? field.getAnnotation(HtmlSelect.class).value()
+          : null;
     }
     return null;
   }

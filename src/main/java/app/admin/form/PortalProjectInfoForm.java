@@ -1,6 +1,7 @@
 package app.admin.form;
 
 import app.config.anotation.Description;
+import app.config.anotation.HtmlSelect;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -19,20 +20,47 @@ public class PortalProjectInfoForm {
   private String businessModule;
   @Description("访问类型")
   @Column
+  @HtmlSelect({
+      "公网",
+      "私有化部署",
+      "内网和公网"
+  })
   private String accessType;
   @Description("所属业务线")
   @Column
+  @HtmlSelect({
+      "智慧线",
+      "智慧法治研究与应用部",
+      "企业法务事业中心",
+      "智慧执法线",
+      "法宝线",
+      "对外项目",
+      "法律科技中心",
+      "法务",
+      "学堂",
+      "公司",
+      "智慧司法线",
+  })
   private String businessLine;
   @Description("项目类型")
-  @Column
+  @HtmlSelect({"流程类", "检索系统", "小程序", "MQ消息服务", "转发服务", "标注系统", "辅助量刑审讯系统", "模型服务", "管理系统", "内容类", "检索类", "对外项目", "内部项目", "其它"})
   private String projectType;
   //前后分离
   @Description("前后分离")
   @Column
+  @HtmlSelect({"是","否"})
   private String frontendBackendSeparation;
   //架构方式
   @Description("架构方式")
   @Column
+  @HtmlSelect({
+      "前后分离",
+      "单体",
+      "微服务",
+      "webform",
+      "jboss",
+      "分布式服务"
+  })
   private String frameworkType;
   //项目技术选型
   @Description("项目技术选型")
@@ -47,12 +75,14 @@ public class PortalProjectInfoForm {
   @Column
   private String situations;
   //CI/CD
-  @Description("CI/CD")
+  @Description("CI/CD自动化部署")
   @Column
+  @HtmlSelect({"有","无"})
   private String cicdFlag;
   //日志情况
   @Description("日志情况")
   @Column
+  @HtmlSelect({"本地日志","ELK","云端日志"})
   private String logSituation;
   //开发环境地址
   @Description("开发环境地址")

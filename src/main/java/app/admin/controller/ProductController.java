@@ -55,8 +55,11 @@ public class ProductController extends AdminAbstractController {
     for (String field : HTMLTemplateUtils.getFiledName(portalProjectInfoForm)) {
       if (field.equals("id"))
         continue;
+      String[] selectVal = HTMLTemplateUtils.getFieldSelectByName(field, PortalProjectInfoForm.class);
       keyValueDescriptions.add(KeyValueDescription.builder()
           .key(field)
+          .type(selectVal == null ? 0 : 1)
+          .info(selectVal)
           .description(HTMLTemplateUtils.getFieldDescByName(field, PortalProjectInfoForm.class))
           .value(HTMLTemplateUtils.getFieldValueByName(field, portalProjectInfoForm))
           .build());

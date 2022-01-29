@@ -11,9 +11,18 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">
                     <span th:text="${item.description}"></span>
                 </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                <div class="col-md-6 col-sm-6 col-xs-12" th:if="${item.type} == 0">
                     <input th:name="${item.key}" th:value="${item.value}" type="text" required="required"
                            class="form-control col-md-7 col-xs-12"/>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12" th:if="${item.type} == 1">
+
+                <select data-placeholder="请选择实验室"  id="laboratoryId" name="laboratoryId"  class="form-control chosen-select" style="width: 100%; "  required >
+                    <option value=""   selected>请选择</option>
+                    <option th:each="laboratoryDO:${item.info}" th:value="${laboratoryDO}"  th:text="${laboratoryDO}" ></option>
+                </select>
                 </div>
             </div>
         </div>
